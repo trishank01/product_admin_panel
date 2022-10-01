@@ -1,0 +1,131 @@
+
+.nav_bar{
+  background-color: #567086;  
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  height: 100px;
+  align-items: center;
+  color: #fff;
+  box-shadow: rgb(255 255 255 / 10%) 0 1px 1px 2px;
+  padding: 0px 80px;
+}
+
+.nav_link_menu{
+    display: flex;
+}
+
+.nav_link{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 26px;
+    align-items: center;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 14px;
+    letter-spacing: 1.1px;
+   
+}
+
+.logo{
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.icon{
+    font-size: 30px;
+    padding-bottom: 8px;
+}
+
+.log_out{
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 14px;
+
+}
+
+.log_out_span{
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding-right: 20px;
+}
+
+.hamburger{
+    display: none;
+}
+.log_out_mobile{
+    display: none;
+}
+
+@media screen and (max-width:780px){
+   .nav_bar {
+    height: 90px;
+   }
+    .logo {
+        display: flex;
+        position: absolute;
+        top: 30px;
+        left: 35px;
+    } 
+    .icon{
+        display: none;
+    }
+
+    .nav_link_menu{
+        display: none;
+    }
+
+    .nav_mobile{
+        position: absolute;
+        display: block;
+        flex-direction: column;
+        list-style: none;
+        background-color: #005469;
+        left: 0;
+        top: 75px;
+        transition: all 0.5s ease-out;
+        width: 100%;
+    }
+    .log_out{
+        display: none;
+    }
+    .dashboard,
+    .products,
+    .accounts{
+        color: #fff;
+        text-align: center;
+        padding: 32px;
+        transition: all 0.5s ease;
+    }
+
+    .icon {
+        display: none;
+    }
+    .hamburger{
+        display: block;
+        position: absolute;
+        font-size: 30px;
+        color: #fff;
+        background-color: #567086;
+        border: none;
+        outline: none;
+        top: 15px;
+        right: 25px;
+    
+    }
+
+    .hamburger_icon{
+        font-size: 42px;
+        background-color: #567086;
+        color: #fff;
+        padding: 4px;
+
+    }
+    .log_out_mobile{
+        display: block;
+    }
+    
+  
+}

@@ -1,0 +1,119 @@
+*{
+    box-sizing: border-box;
+  }
+  
+  
+  .table_product {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      display: block;
+      height: 420px;
+      overflow-y: scroll;
+    }
+    
+    .table_product td, th {
+      border-bottom: 2px solid #486177;
+      text-align: left;
+   
+    }
+    
+    .table_product tr > th {
+    background-color: #486177;
+    padding: 20px 15px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 12px;
+   }
+   .table_product tr > td  {
+    background-color: #50697F;
+    padding: 20px 15px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+
+   }
+  
+  .dot{
+    padding-right: 6px;
+  
+  }
+  
+    .line_color{
+      background-color: #435C70;
+      margin: 20px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 1px 1px 5px 0 #455c71;
+    
+  }
+  
+  .heading{
+    color: #fff;
+    padding-bottom: 20px;
+  }
+
+  .checkbox input {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .checkbox input::before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    background-color: #394E64;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: 0.3s all ease;
+  }
+  .checkbox input:checked::before {
+    background-color: 394E64;
+  }
+  .checkbox input:checked::after {
+    position: absolute;
+    content: "\f00c";
+    font-family: "FontAwesome";
+    color: #fff;
+  }
+
+  .delete_wrapper{
+    position: relative;
+    padding: 8px 10px;
+    border-radius: 50%;
+    background-color: #394E64;
+  }
+
+
+.delete{
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.btn_product , .btn_delete {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: #F5A623;
+  padding: 16px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: sans-serif;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+  @media screen and (max-width:780px) {
+  
+    .line_color{
+        margin: 20px 0px;
+        width: 130%;
+    }
+  }

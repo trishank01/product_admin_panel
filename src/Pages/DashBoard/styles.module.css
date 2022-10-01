@@ -1,0 +1,37 @@
+.dashboard_containerr{
+    background-color: #4E657A;
+    padding: 0px 100px;    
+}
+
+.headline{
+    font-size: 16px;
+    font-family: sans-serif;
+    color: white;
+    padding: 20px;
+    padding-left: 130px;
+    
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    
+}
+
+@media screen and (max-width:1415px) {
+    .wrapper{
+        display: flex;
+         flex-direction: column;
+        width: 100%;
+        align-items: center;
+        
+    }
+}
+
+
+@media screen and (max-width:460px) {
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        
+    }
+}

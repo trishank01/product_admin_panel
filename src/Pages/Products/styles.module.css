@@ -1,0 +1,10 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.Categories_container{
+    background-color: #4E657A;
+    min-height: 700px;
+}

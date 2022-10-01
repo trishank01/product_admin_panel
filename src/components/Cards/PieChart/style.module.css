@@ -1,0 +1,23 @@
+
+.line_color{
+    width: 550px;
+    height: 400px;
+    background-color: #435C70;
+    margin: 30px;
+    padding: 35px;
+    box-shadow: 1px 1px 5px 0 #455c71;
+}
+
+.heading{
+    color: #fff;
+    font-size: 18px;
+    font-family: sans-serif;
+    padding-bottom: 18px;
+}
+
+@media screen and (max-width:780px) {
+
+    .line_color{
+        margin: 20px 0px;
+    }
+}

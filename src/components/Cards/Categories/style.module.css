@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+  }
+  
+  
+  .table_categories {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      display: block;
+      height: 400px;
+      overflow-y: auto;
+    }
+    
+    .table_categories td, th {
+      border-bottom: 2px solid #486177;
+      text-align: left;
+   
+    }
+    
+    .table_categories tr > th {
+    background-color: #486177;
+    padding: 20px 40px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 13px;
+   }
+   tr > td  {
+    background-color: #50697F;
+    padding: 20px 40px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 13px;
+   }
+  
+  .dot{
+    padding-right: 6px;
+  
+  }
+  
+    .line_color{
+      background-color: #435C70;
+      margin: 20px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 1px 1px 5px 0 #455c71;
+    
+  }
+  
+  .heading{
+    color: #fff;
+    padding-bottom: 20px;
+  }
+
+  .delete_wrapper{
+    position: relative;
+    padding: 8px 10px;
+    border-radius: 50%;
+    background-color: #394E64;
+
+  }
+
+.delete{
+  font-size: 24px;
+  cursor: pointer;
+}
+.btn_product {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: #F5A623;
+  padding: 16px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: sans-serif;
+  border: none;
+  cursor: pointer;
+}
+  
+  @media screen and (max-width:780px) {
+  
+    .line_color{
+        margin: 20px 0px;
+        width: 130%;
+    }
+  }
