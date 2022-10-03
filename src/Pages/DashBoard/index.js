@@ -6,9 +6,11 @@ import PieChart from "../../components/Cards/PieChart";
 import Notification from "../../components/Cards/Notification";
 import OrderList from "../../components/Cards/OrderList";
 
-const Dashboard = () => {
+const Dashboard = ({myData}) => {
+
 
   return (
+     <>
     <div className={styles.dashboard_containerr}>
       <h1 className={styles.headline}>Welcome Back, admin</h1>
       <div className={styles.container}>
@@ -24,7 +26,8 @@ const Dashboard = () => {
           <OrderList/>
         </div>
       </div>
-    </div>
+    </div> 
+     </>
   );
 };
 

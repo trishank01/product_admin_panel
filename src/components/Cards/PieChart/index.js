@@ -4,13 +4,16 @@ import { Pie } from "react-chartjs-2";
 import styles from "./style.module.css";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-const items = JSON.parse(localStorage.getItem("apiData"));
+
+
+const PieChart = () => {
+  const items = JSON.parse(localStorage.getItem("apiData"));
 const showData = items.dasbhoardPage;
 const storageKey = Object.keys(showData.storage);
 const storagevalue = Object.values(showData.storage);
 
 
-export const data = {
+ const data = {
   labels: storageKey.map((item, index) => {
     return `${item} Storage ${storagevalue[index]}GB`;
   }),
@@ -24,8 +27,6 @@ export const data = {
     },
   ],
 };
-
-const PieChart = () => {
   return (
     <div className={styles.line_color}>
       <Pie

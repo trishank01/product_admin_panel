@@ -14,7 +14,12 @@ import {
 import { Bar } from "react-chartjs-2";
 ChartJS.defaults.color = "#fff";
 Legend.defaults.color = "#fff";
-const items = JSON.parse(localStorage.getItem("apiData"));
+
+
+
+const BarChart = () => {
+
+  const items = JSON.parse(localStorage.getItem("apiData"));
 const showData = items.dasbhoardPage;
 
 
@@ -29,7 +34,7 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
+ const options = {
   responsive: true,
   indexAxis: "y",
   plugins: {
@@ -42,7 +47,7 @@ export const options = {
 const labels = Object.keys(showData.performance);
 
 
-export const data = {
+ const data = {
   labels,
   datasets: [
     {
@@ -55,9 +60,6 @@ export const data = {
   ],
 };
 
-
-
-const BarChart = () => {
   return (
     <div className={styles.line_color}>
       <h2 className={styles.heading}>Performance</h2>

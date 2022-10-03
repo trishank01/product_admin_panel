@@ -87,6 +87,7 @@
     padding: 8px 10px;
     border-radius: 50%;
     background-color: #394E64;
+    cursor: pointer;
   }
 
 
@@ -109,7 +110,12 @@
 }
 
 
-
+.form_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
   @media screen and (max-width:780px) {
   
     .line_color{
