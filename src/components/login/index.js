@@ -35,12 +35,12 @@ const Login = () => {
           "dashboardPage",
           JSON.stringify(response.data.dasbhoardPage)
         );
-        localStorage.setItem(
-          "productsPage",
-          JSON.stringify(response.data.productsPage)
-        );
         localStorage.setItem("products", JSON.stringify(response.data.productsPage.products)
         );
+        localStorage.setItem("categories", JSON.stringify(response.data.productsPage.categories)
+        );
+
+
       } catch (err) {
         console.log(err);
       }

@@ -1,0 +1,9 @@
+.container{
+    background-color: #4E657A;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper{
+    display: flex;
+}
