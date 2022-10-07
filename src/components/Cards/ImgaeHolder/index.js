@@ -1,108 +1,141 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
-const Avatar = () => {
-   
+const Avatar = (props) => {
+  const { change } = props;
+
   const getDataFromlocal = () => {
-    const data = localStorage.getItem("accountsPage")
+    const data = JSON.parse(localStorage.getItem("accountsPage"));
+    if (data) {
+      return data
+    }
+     else {
+      return [];
+    }
+  };
+
+  const getValue = () => {
+    const data =  JSON.parse(localStorage.getItem("selectValue"))
     if(data){
-        return data
-    }else {
-        return []
+      return data
+    }else{
+      return []
     }
   }
 
+  const [localValue, setLocalValue] = useState(change);
   const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [expireDate, setExpireDate] = useState("");
-  const [stock, setStock] = useState("");
-  const [unitSold, setUnitSold] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [ConfirmPassword, setConfirmPassword] = useState("");
+  const [Phone, setPhone] = useState("");
   const [books, setBooks] = useState(getDataFromlocal());
-  console.log(books)
-  //const [showForm, setShowForm] = useState(false);
-  // const [checkbox, setCheckBox] = useState([]);
+  const [selectChnage, setselectChange] = useState(getValue());
+
+  console.log(name)
+
+  useEffect(() => {
+    if (change === "Admin" ) {
+      setselectChange(books.Admin);
+    } 
+    if (change === "Editor") {
+      setselectChange(books.Editor);
+    }
+    if (change === "Merchant") {
+      setselectChange(books.Merchant);
+    } 
+     if (change === "Customer") {
+      setselectChange(books.Customer);
+    } 
+   localStorage.setItem("selectValue" , JSON.stringify(selectChnage))
+ 
+  }, [books, change , selectChnage]);
+
+
   const formChangeHandler = () => {};
+
   return (
     <div className={styles.container}>
-      <div className={styles.wrapper_right}>
+     {selectChnage != null &&  <div className={styles.wrapper_right}>
         <h1 className={styles.heading}>Change Avatar</h1>
         <div className={styles.img_wrapper}>
-          <img src="https://picsum.photos/id/1084/350/350" alt="" />
+          <img src={selectChnage.profilePic} alt="" />
           <div className={styles.icon_wrapper}>
             <RiDeleteBin6Line />
           </div>
         </div>
         <button className={styles.btn}>UPLOAD NEW PHOTO</button>
-      </div>
-      <div className={styles.wrapper}>
+      </div>}
+     {selectChnage != null &&  <div className={styles.wrapper}>
         <div className={styles.formInput}>
           <div className={styles.inputWrapper}>
-          <div className={styles.oneItem}>
-          <label>Enter Product name</label>
-          <input
-            type="text"
-            className="form-control"
-            required
-            onChange={(e) => setName(e.target.value)}
-            value={name}
-            placeholder="Enter Product name"
-          />
-          </div>
-         <div className={styles.oneItem}>
-         <label>Description</label>
-          <input
-            type="text"
-            className="form-control"
-            required
-            onChange={(e) => setDescription(e.target.value)}
-            value={description}
-            placeholder="please Provide description"
-          />
-         </div>
+            <div className={styles.oneItem}>
+              <label>Account Name</label>
+              <input
+                type="text"
+                className="form-control"
+                required
+                onChange={(e) => setName(e.target.value)}
+                value={name ? name : selectChnage.name}
+                placeholder="Account Name"
+                
+              />
+            </div>
+            <div className={styles.oneItem}>
+              <label>Account Email</label>
+              <input
+                type="email"
+                className="form-control"
+                required
+                onChange={(e) => setEmail(e.target.value)}
+                value={email ? email : selectChnage.email}
+                placeholder="Account Email"
+              />
+            </div>
           </div>
           <div className={styles.inputWrapper}>
-          <div className={styles.oneItem}>
-          <label>please enter Expire date</label>
-          <input
-            type="date"
-            className="form-control"
-            required
-            onChange={(e) => setExpireDate(e.target.value)}
-            value={expireDate}
-            placeholder="please enter Expire date"
-          />
+            <div className={styles.oneItem}>
+              <label>Password</label>
+              <input
+                type="text"
+                className="form-control"
+                required
+                onChange={(e) => setPassword(e.target.value)}
+                value={password ? password : selectChnage.password}
+                placeholder="Password"
+              />
+            </div>
+            <div className={styles.oneItem}>
+              <label>Re-enter Password</label>
+              <input
+                type="text"
+                className="form-control"
+                required
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                value={ConfirmPassword ? ConfirmPassword : selectChnage.password}
+                placeholder="Re-enter Password"
+              />
+            </div>
           </div>
-        <div className={styles.oneItem}>
-        <label>Availble stock</label>
-          <input
-            type="number"
-            className="form-control"
-            required
-            onChange={(e) => setStock(e.target.value)}
-            value={stock}
-            placeholder="Availble stock"
-          />
-        </div>
+          <div className={styles.inputWrapper}>
+            <div className={styles.oneItem}>
+              <label>Phone</label>
+              <input
+                type="number"
+                className="form-control"
+                required
+                onChange={(e) => setPhone(e.target.value)}
+                value={Phone ? Phone : selectChnage.phone}
+                placeholder="Phone"
+              />
+            </div>
+            <div className={styles.oneItem}>
+              <button type="submit" className={styles.btn}>
+                UPDATE YOUR PROFILE
+              </button>
+            </div>
           </div>
-         <div className={styles.inputWrapper}>
-        <div className={styles.oneItem}>
-        <label>Unit sold</label>
-          <input
-            type="number"
-            className="form-control"
-            required
-            onChange={(e) => setUnitSold(e.target.value)}
-            value={unitSold}
-            placeholder="Unit Sold"
-          />
-        </div>
-         <div className={styles.oneItem}>
-         <button type="submit" className={styles.btn}>
-           UPDATE YOUR PROFILE
-          </button>
-         </div>
-         </div>
           <button
             type="submit"
             className={styles.btn}
@@ -111,9 +144,16 @@ const Avatar = () => {
             DELELTE YOUR ACCOUNT
           </button>
         </div>
-      </div>
+      </div>}
     </div>
   );
 };
 
 export default Avatar;
+
+
+// let dataArray = Object.keys(data);
+// //console.log(dataArray)
+// let arrList = dataArray.map((key) => {
+//   return {[key]:data[key]} ;
+// });

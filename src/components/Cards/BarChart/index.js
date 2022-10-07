@@ -21,7 +21,7 @@ const BarChart = () => {
 
   const items = JSON.parse(localStorage.getItem("apiData"));
 const showData = items.dasbhoardPage;
-
+console.log( "showData" ,showData)
 
 ChartJS.register(
   CategoryScale,
